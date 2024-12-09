@@ -1,0 +1,335 @@
+/* Reset CSS */
+
+/* Remove all margin, padding, and border */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a uniform base for font styles */
+html {
+  font-size: 16px; /* Default 16px */
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in Safari */
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+/* Reset body styles */
+body {
+  margin: 0;
+  font-family: sans-serif; /* Use a default sans-serif font */
+  color: #e6e5ea;
+  background-color: #18171f;
+  text-size-adjust: 100%;
+}
+
+/* Remove list styles */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Remove default table borders */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove padding from button and input */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove background and border for buttons */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Normalize form elements */
+input,
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+/* Remove underline for links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset images */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Reset blockquote and figure margins */
+blockquote,
+figure {
+  margin: 0;
+}
+
+/* Remove default hr styling */
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset heading margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+/* Reset pre and code */
+pre,
+code {
+  font-family: monospace, monospace;
+  font-size: inherit;
+  margin: 0;
+}
+
+/* Reset fieldset and legend */
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+/* Reset iframe styles */
+iframe {
+  border: 0;
+}
+
+/* Remove appearance for select and input */
+select {
+  appearance: none;
+  background: none;
+  border: none;
+}
+
+/* Remove scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar width */
+  height: 0;
+}
+
+/* Accessibility improvements */
+[hidden] {
+  display: none;
+}
+
+.main {
+  margin: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.password-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #24232c;
+  padding: 8px;
+}
+
+.settings {
+  background-color: #24232c;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.password-length-setting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.character-length-display {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #a4ffaf;
+}
+
+.password-length-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #18171f;
+  outline: none;
+  position: relative;
+}
+
+.password-length-input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background: #18171f;
+}
+
+.password-length-input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(((var(--value, 8) - 1) / (20 - 1) * 100%));
+  height: 8px;
+  background: #a4ffaf;
+  pointer-events: none;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #24232c;
+  border: 2px solid #d8d8d8;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+.checkbox:checked {
+  background-color: #a4ffaf;
+  border: none;
+}
+
+.checkbox:checked::before {
+  content: "✔";
+  color: #18171f;
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.password-length-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 28px;
+  width: 28px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -10px;
+}
+
+.strength-setting {
+  background-color: #18171f;
+  padding: 8px;
+}
+
+.generate-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px;
+  background-color: #a4ffaf;
+  color: #24232c;
+}
+
+.strength-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1c1c1c;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  color: #aaa;
+}
+
+.strength-indicator-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.strength-indicator-details {
+  display: flex;
+  gap: 4px;
+}
+
+.strength-indicator-level {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.strength-indicator-bars {
+  display: flex;
+  gap: 5px;
+}
+
+.bar {
+  width: 10px;
+  height: 20px;
+  border: 2px solid #e6e5ea;
+  background-color: transparent;
+}
+
+.bar--too-weak {
+  background-color: #f64a4a;
+  border: none;
+}
+
+.bar--weak {
+  background-color: #fb7c58;
+  border: none;
+}
+
+.bar--medium {
+  background-color: #f8cd65;
+  border: none;
+}
+
+.bar--strong {
+  background-color: #a4ffaf;
+  border: none;
+}
